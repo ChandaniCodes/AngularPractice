@@ -1,0 +1,53 @@
+<!-- <div class="row">
+  <div class="col-sm-12">
+    <h1>Add Server</h1>
+    <label>server name</label>
+    <input type="text" class="form-control" [(ngModel)]="serverName" />
+    <label>server content</label>
+    <input type="text" class="form-control" [(ngModel)]="serverContent" /><br />
+    <button class="btn btn-primary" (click)="onAddServer()">
+      Add server
+    </button>
+    <button class="btn btn-danger" (click)="onAddBluePrintServer()">
+      Add blueprint server
+    </button>
+  </div>
+</div> -->
+
+<!-- pass data to the app component -->
+
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Add Server</h1>
+    <!-- two way data binding -->
+    <!-- <label>server name</label>
+    <input type="text" class="form-control" [(ngModel)]="newserverName" />
+    <input type="text" class="form-control" [(ngModel)]="newserverContent" /> -->
+
+    <!-- <button class="btn btn-primary" (click)="onAddServer()">
+      Add server
+    </button> -->
+
+    <!-- local reference -->
+    <label>server name</label>
+    <input type="text" class="form-control" #serverName />
+
+    <label>server content</label>
+    <input type="text" class="form-control" #serverContent />
+
+    <br />
+
+    <button
+      class="btn btn-primary"
+      (click)="onAddServer(serverName, serverContent)"
+    >
+      Add server
+    </button>
+    <button
+      class="btn btn-danger"
+      (click)="onAddBluePrintServer(serverName, serverContent)"
+    >
+      Add blueprint server
+    </button>
+  </div>
+</div>

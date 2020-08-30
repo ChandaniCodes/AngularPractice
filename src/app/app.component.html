@@ -1,0 +1,61 @@
+<div class="container">
+  <p>Angular Code</p>
+  <!-- <div class="row">
+    <div class="col-sm-12">
+      <h1>Add Server</h1>
+      <label>server name</label>
+      <input type="text" class="form-control" [(ngModel)]="serverName" />
+      <label>server content</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="serverContent"
+      /><br />
+      <button class="btn btn-primary" (click)="onAddServer()">
+        Add server
+      </button>
+      <button class="btn btn-danger" (click)="onAddBluePrintServer()">
+        Add blueprint server
+      </button>
+    </div>
+  </div> -->
+
+  <!-- <br /> -->
+  <!-- <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default" *ngFor="let element of serverElement">
+        <div class="panel-heading">{{ element.name }}</div>
+        <div class="panel-body">
+          <p>
+            <strong *ngIf="element.type === 'server'" style="color: purple;">
+              {{ element.content }}
+            </strong>
+            <em *ngIf="element.type === 'blueprint'" style="color: green;">{{
+              element.content
+            }}</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <app-cockpit
+    (serverCreated)="onServerAdded($event)"
+    (blueprintCreated)="onBlueprintAdded($event)"
+  ></app-cockpit>
+  <br />
+
+  <app-server-element
+    *ngFor="let newSerElement of serverElement"
+    [element]="newSerElement"
+  >
+    <p>
+      <strong *ngIf="newSerElement.type === 'server'" style="color: purple;">
+        {{ newSerElement.content }}
+      </strong>
+      <em *ngIf="newSerElement.type === 'blueprint'" style="color: green;">{{
+        newSerElement.content
+      }}</em>
+    </p>
+  </app-server-element>
+</div>

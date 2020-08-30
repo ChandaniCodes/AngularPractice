@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-12">
+    <!-- <div class="panel panel-default" *ngFor="let element of serverElement"> -->
+    <div class="panel panel-default">
+      <div class="panel-heading">{{ element.name }}</div>
+      <div class="panel-body">
+        <ng-content></ng-content>
+        <!-- <p>
+          Created
+          <strong *ngIf="element.type === 'server'" style="color: purple;">
+            {{ element.content }}
+          </strong>
+          <em *ngIf="element.type === 'blueprint'" style="color: green;">{{
+            element.content
+          }}</em>
+        </p> -->
+      </div>
+    </div>
+  </div>
+</div>
